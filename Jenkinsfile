@@ -16,9 +16,9 @@ pipeline {
         }
         stage('Login to Docker Hub') {
             steps {
-               withCredentials([string(credentialsId: 'expense-tracker-id', variable: 'expense-tracker')]) {
+               withCredentials([string(credentialsId: 'expense-tracker-id', variable: 'expense-tracker-id')]) {
                     script {
-                        bat "docker login -u menuka2002 -p %expense-tracker%"
+                        bat "docker login -u menuka2002 -p ${expense-tracker-id}"
                     }
                 }
             }
